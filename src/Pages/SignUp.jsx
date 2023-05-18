@@ -46,7 +46,6 @@ const SignUp = () => {
                     <p className='mt-4'>Have an account? <Link className='text-orange ' to="/signin">Please Sign In</Link></p>
                 </div>
             </div>
-
         </div>
     );
 };
