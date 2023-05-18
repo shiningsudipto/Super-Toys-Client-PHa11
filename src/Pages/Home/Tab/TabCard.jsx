@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Rating from 'react-rating';
-import { FaStar, FaRegStar, FaHeart } from "react-icons/fa";
+import { FaStar, FaRegStar } from "react-icons/fa";
+import { AuthContext } from '../../../Provider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 const TabCard = ({ category }) => {
     const { name, pictureUrl, price, rating, _id } = category;
+    const { user } = useContext(AuthContext);
+
+    const handleViewDetails = () => {
+        toast("You have to log in first to view details"); // Display the toast message
+        window.location.href = `/toyDetails/${_id}`;
+    };
+
     return (
         <div>
             <div className="card bg-base-100 h-full shadow-xl">
@@ -26,7 +37,13 @@ const TabCard = ({ category }) => {
                             </p>
                         </div>
                         <div className="card-actions">
-                            <button className="btn border-0 bg-orange hover:border-2 hover:border-orange hover:bg-white hover:text-orange">View Details</button>
+                            {
+                                user ? <Link className='btn bg-orange border-0' to={`/toyDetails/${_id}`}>View Details</Link>
+                                    :
+                                    <button className='btn bg-orange border-0' onClick={handleViewDetails}>View Details</button>
+                            }
+
+                            <ToastContainer />
                         </div>
                     </div>
                 </div>
@@ -36,3 +53,5 @@ const TabCard = ({ category }) => {
 };
 
 export default TabCard;
+
+// to={`/toyDetails/${_id}`}
