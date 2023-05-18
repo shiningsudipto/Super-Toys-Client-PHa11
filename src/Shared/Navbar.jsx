@@ -15,6 +15,7 @@ const Navbar = () => {
                 console.log(error);
             });
     }
+
     const menuLinks = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/">All Toys</Link></li>
@@ -43,10 +44,13 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        user ? <>
-                            <img src={''} alt="" />
-                            <button onClick={handleLogOut}>Logout</button>
-                        </>
+                        user ?
+                            <>
+                                <div className='tooltip tooltip-bottom' data-tip={user?.displayName}>
+                                    <img src={user?.photoURL} className='h-14 rounded-full border-2 border-orange me-3' alt="" />
+                                </div>
+                                <button onClick={handleLogOut}>Logout</button>
+                            </>
                             :
                             <Link to="/signin">Login</Link>
                     }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const SignUp = () => {
-    const { createUser } = useContext(AuthContext)
+    const { createUser, settingDataToProfile } = useContext(AuthContext)
     const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
@@ -16,6 +16,13 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                settingDataToProfile(name, photo)
+                    .then(() => {
+                        console.log("Profile updated");
+                    })
+                    .catch((error) => {
+                        setRegError(error.message)
+                    });
             })
             .catch(error => {
                 const errorMessage = error.message;
