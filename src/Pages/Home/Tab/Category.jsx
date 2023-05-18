@@ -21,7 +21,7 @@ const Category = () => {
     };
 
     return (
-        <div>
+        <div className='my-14'>
             <Tabs>
                 <TabList>
                     <Tab onClick={() => handleCategory('Avengers')}>Avengers</Tab>
@@ -30,7 +30,7 @@ const Category = () => {
                 </TabList>
 
                 <TabPanel>
-                    <div className='grid lg:grid-cols-3 gap-4'>
+                    <div className='grid lg:grid-cols-3 gap-6'>
                         {categories.map((ctg) => (
                             <TabCard key={ctg._id} category={ctg}></TabCard>
                         ))}
