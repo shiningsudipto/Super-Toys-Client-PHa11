@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import DataROw from './DataROw';
+import useTitle from '../../Hook/useTitle';
 
 const AllToys = () => {
+    useTitle('All Toys')
     // const toys = useLoaderData();
     // console.log(toys);
     const [toys, setToys] = useState([]);

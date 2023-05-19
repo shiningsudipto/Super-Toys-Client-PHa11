@@ -2,8 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import MyToysRow from './MyToysRow';
 import UpdateModal from './UpdateModal';
+import useTitle from '../../Hook/useTitle';
 
 const MyToys = () => {
+    useTitle('My Toys')
     const { user, loading } = useContext(AuthContext);
     if (loading) {
         return <div className='mx-auto w-1/3 my-6'>
