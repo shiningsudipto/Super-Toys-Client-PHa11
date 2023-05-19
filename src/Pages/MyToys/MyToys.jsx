@@ -1,0 +1,53 @@
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../Provider/AuthProvider';
+import MyToysRow from './MyToysRow';
+
+const MyToys = () => {
+    const { user, loading } = useContext(AuthContext);
+    if (loading) {
+        return <div className='mx-auto w-1/3 my-6'>
+            <progress className="progress"></progress>
+        </div>
+    }
+    const [myToys, setMyToys] = useState([])
+    useEffect(() => {
+        fetch(`http://localhost:5000/toysBy?email=${user?.email}`)
+            .then(res => res.json())
+            .then(data => setMyToys(data))
+    }, [])
+    console.log(myToys);
+    return (
+        <div className='my-14'>
+            <div className="overflow-x-auto">
+                <table className="table w-full">
+                    {/* head */}
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Rating</th>
+                            <th>Quantity</th>
+                            <th>Details</th>
+                            <th>Seller Name</th>
+                            <th>Seller Email</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    {
+                        myToys.map((myToy, index) => <MyToysRow
+                            key={myToy._id}
+                            myToy={myToy}
+                            number={index}
+                        ></MyToysRow>)
+                    }
+                </table>
+            </div>
+        </div>
+    );
+};
+
+export default MyToys;

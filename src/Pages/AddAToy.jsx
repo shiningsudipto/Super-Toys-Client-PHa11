@@ -54,7 +54,7 @@ const AddAToy = () => {
                     <label className="label">
                         <span className="label-text">Name</span>
                     </label>
-                    <input type="text" name='name' placeholder="Name" className="input input-bordered" />
+                    <input type="text" name='name' required placeholder="Name" className="input input-bordered" />
                 </div>
                 <div className="form-control">
                     <label className="label">
@@ -79,7 +79,7 @@ const AddAToy = () => {
                         <label className="label">
                             <span className="label-text">Price</span>
                         </label>
-                        <input name='price' type="number" placeholder="Price" className="input input-bordered" />
+                        <input name='price' type="number" required placeholder="Price" className="input input-bordered" />
                     </div>
                 </div>
                 <div className='grid lg:grid-cols-2 lg:gap-x-6'>
@@ -113,7 +113,7 @@ const AddAToy = () => {
                         <label className="label">
                             <span className="label-text">Seller email</span>
                         </label>
-                        <input type="text" name='sellerEmail' defaultValue={user?.email} placeholder="Seller email" className="input input-bordered" />
+                        <input type="text" name='sellerEmail' required defaultValue={user?.email} placeholder="Seller email" className="input input-bordered" />
                     </div>
                 </div>
                 <button className='btn bg-orange w-full border-0 font-bold text-xl my-6'>Add Toy</button>

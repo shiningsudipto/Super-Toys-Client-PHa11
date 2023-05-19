@@ -19,7 +19,7 @@ const Navbar = () => {
     const menuLinks = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/allToys">All Toys</Link></li>
-        <li><Link to="/">My Toys</Link></li>
+        <li><Link to="/myToys">My Toys</Link></li>
         <li><Link to="/addAToy">Add A Toy</Link></li>
         <li><Link to="/">Blogs</Link></li>
     </>
