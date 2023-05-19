@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import MyToysRow from './MyToysRow';
+import UpdateModal from './UpdateModal';
 
 const MyToys = () => {
     const { user, loading } = useContext(AuthContext);
@@ -9,13 +10,18 @@ const MyToys = () => {
             <progress className="progress"></progress>
         </div>
     }
+    const [selectedId, setSelectedId] = useState(null);
     const [myToys, setMyToys] = useState([])
+    console.log(selectedId);
     useEffect(() => {
         fetch(`http://localhost:5000/toysBy?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setMyToys(data))
-    }, [])
+    }, [selectedId])
     console.log(myToys);
+
+
+
     return (
         <div className='my-14'>
             <div className="overflow-x-auto">
@@ -37,15 +43,26 @@ const MyToys = () => {
                             <th>Delete</th>
                         </tr>
                     </thead>
-                    {
-                        myToys.map((myToy, index) => <MyToysRow
-                            key={myToy._id}
-                            myToy={myToy}
-                            number={index}
-                        ></MyToysRow>)
-                    }
+                    <tbody>
+                        {
+                            myToys.map((myToy, index) => <MyToysRow
+                                key={myToy._id}
+                                myToy={myToy}
+                                number={index}
+                                myToys={myToys}
+                                setMyToys={setMyToys}
+                                setSelectedId={setSelectedId}
+                            ></MyToysRow>)
+                        }
+                    </tbody>
                 </table>
             </div>
+            {
+                selectedId && (<UpdateModal setSelectedId={setSelectedId} selectedId={selectedId} ></UpdateModal>)
+            }
+
+
+
         </div>
     );
 };
