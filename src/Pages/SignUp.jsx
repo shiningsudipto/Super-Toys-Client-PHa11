@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import useTitle from '../Hook/useTitle';
+import { ToastContainer, toast } from 'react-toastify';
 
 const SignUp = () => {
     useTitle('SignUp')
     const { createUser, settingDataToProfile } = useContext(AuthContext)
+    const navigate = useNavigate()
     const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
@@ -21,10 +23,13 @@ const SignUp = () => {
                 settingDataToProfile(name, photo)
                     .then(() => {
                         console.log("Profile updated");
+                        toast('User Created Successfully')
                     })
                     .catch((error) => {
                         setRegError(error.message)
                     });
+                form.reset();
+                navigate('/')
             })
             .catch(error => {
                 const errorMessage = error.message;
@@ -67,6 +72,7 @@ const SignUp = () => {
                     <p className='mt-4'>Have an account? <Link className='text-orange ' to="/signin">Please Sign In</Link></p>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };
