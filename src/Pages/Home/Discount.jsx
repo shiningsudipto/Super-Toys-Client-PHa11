@@ -9,7 +9,7 @@ const Discount = () => {
                 <h2 className='text-5xl text-orange font-bold mb-4'>Offers</h2>
                 <h4 className='text-3xl font-semibold mb-6'>Collect before ran out.</h4>
             </div>
-            <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-6 lg:mx-10'>
+            <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-6 lg:mx-10 lg:space-y-0 space-y-6'>
                 <div className="card bg-base-100 shadow-xl image-full">
                     <figure><img src={img1} alt="Shoes" /></figure>
                     <div className="card-body">

@@ -13,7 +13,7 @@ const Gallery = () => {
                 <h2 className='lg:text-4xl font-bold text-center text-orange mt-12 mb-4'>Toys Gallery</h2>
                 <p className='lg:text-2xl font-semibold'>Best Selling Super Toys.</p>
             </div>
-            <div className="grid grid-cols-3">
+            <div className="grid lg:grid-cols-3 grid-cols-1">
                 {/* Image 1 */}
                 <div className="">
                     <div className="relative group">

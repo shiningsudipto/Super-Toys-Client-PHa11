@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <div>
             <footer className=" p-10 bg-black text-white">
-                <div className='flex justify-between'>
+                <div className='flex justify-between flex-col lg:flex-row items-center text-center lg:space-y-0 space-y-6'>
                     <div>
                         <img className='h-12' src={logo} alt="" />
                         <p>Super Toys Industries Ltd.<br />
