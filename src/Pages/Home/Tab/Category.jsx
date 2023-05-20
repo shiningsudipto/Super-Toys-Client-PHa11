@@ -22,6 +22,10 @@ const Category = () => {
 
     return (
         <div className='my-14'>
+            <div className='text-center my-6'>
+                <h2 className='lg:text-4xl font-bold text-center text-orange mt-12 mb-4'>Toys Category</h2>
+                <p className='lg:text-2xl font-semibold'>Buy Your Favorite Toy.</p>
+            </div>
             <Tabs id='tabs' className="">
                 <TabList className="mx-auto text-center border-b border-orange">
                     <Tab onClick={() => handleCategory('Avengers')}>Avengers</Tab>

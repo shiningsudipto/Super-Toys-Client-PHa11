@@ -21,7 +21,7 @@ const Footer = () => {
                         <p><Link className='hover:text-orange' to="/allToys">All Toys</Link></p>
                         <p><Link className='hover:text-orange' to="/myToys">My Toys</Link></p>
                         <p><Link className='hover:text-orange' to="/addAToy">Add A Toy</Link></p>
-                        <p><Link className='hover:text-orange' to="/blog">Blogs</Link></p>
+                        <p><Link className='hover:text-orange' to="/blogs">Blogs</Link></p>
                     </div>
                     <div>
                         <span className="footer-title">Address</span>

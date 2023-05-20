@@ -40,7 +40,7 @@ const routes = createBrowserRouter([
                 element: <PrivateRoute><MyToys /></PrivateRoute>
             },
             {
-                path: 'blog',
+                path: 'blogs',
                 element: <Blog />
             },
             {

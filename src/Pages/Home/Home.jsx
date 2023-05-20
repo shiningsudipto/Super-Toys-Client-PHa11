@@ -5,6 +5,7 @@ import Category from './Tab/Category';
 import useTitle from '../../Hook/useTitle';
 import Discount from './Discount';
 import Process from './Process';
+import Newsletter from './Newsletter';
 
 const Home = () => {
     useTitle('Home')
@@ -14,6 +15,7 @@ const Home = () => {
             <Gallery />
             <Category />
             <Discount />
+            <Newsletter />
             <Process />
         </div>
     );

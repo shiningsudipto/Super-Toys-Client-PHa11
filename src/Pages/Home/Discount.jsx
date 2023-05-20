@@ -20,6 +20,7 @@ const Discount = () => {
                     <div className="card-body">
                         <h2 className="lg:text-6xl font-bold">Collection</h2>
                         <p className='text-orange text-2xl font-bold'>30% flat discount</p>
+                        <p className='font-bold'>Marvel Studio</p>
                         <div className="card-actions justify-end">
                             <button className="btn bg-orange">Buy Now</button>
                         </div>
@@ -30,6 +31,7 @@ const Discount = () => {
                     <div className="card-body">
                         <h2 className="lg:text-6xl font-bold">Collection</h2>
                         <p className='text-orange text-2xl font-bold'>20% flat discount</p>
+                        <p className='font-bold'>DC Comics</p>
                         <div className="card-actions justify-end">
                             <button className="btn bg-orange">Buy Now</button>
                         </div>
