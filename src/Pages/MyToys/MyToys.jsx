@@ -16,7 +16,7 @@ const MyToys = () => {
     const [myToys, setMyToys] = useState([])
     console.log(selectedId);
     useEffect(() => {
-        fetch(`http://localhost:5000/toysBy?email=${user?.email}`)
+        fetch(`https://action-toys-server-taupe.vercel.app/toysBy?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setMyToys(data))
     }, [selectedId])

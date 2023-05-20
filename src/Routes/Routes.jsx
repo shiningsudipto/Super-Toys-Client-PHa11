@@ -9,6 +9,7 @@ import PrivateRoute from './PrivateRoute';
 import AllToys from '../Pages/AllToys/AllToys';
 import AddAToy from '../Pages/AddAToy';
 import MyToys from '../Pages/MyToys/MyToys';
+import Notfound from '../Pages/Notfound';
 
 const routes = createBrowserRouter([
     {
@@ -22,7 +23,7 @@ const routes = createBrowserRouter([
             {
                 path: '/toyDetails/:id',
                 element: <PrivateRoute><ToyDetails /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/toy/${params.id}`)
+                loader: ({ params }) => fetch(`https://action-toys-server-taupe.vercel.app/toy/${params.id}`)
             },
             {
                 path: '/allToys',
@@ -31,11 +32,11 @@ const routes = createBrowserRouter([
             },
             {
                 path: 'addAToy',
-                element: <AddAToy />
+                element: <PrivateRoute><AddAToy /></PrivateRoute>
             },
             {
                 path: 'myToys',
-                element: <MyToys />
+                element: <PrivateRoute><MyToys /></PrivateRoute>
             },
             {
                 path: 'signin',
@@ -46,6 +47,10 @@ const routes = createBrowserRouter([
                 element: <SignUp />
             }
         ]
+    },
+    {
+        path: '*',
+        element: <Notfound />
     }
 ])
 

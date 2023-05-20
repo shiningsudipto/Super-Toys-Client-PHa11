@@ -18,7 +18,7 @@ const MyToysRow = ({ myToy, number, myToys, setMyToys, setSelectedId }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/toys/${_id}`, {
+                fetch(`https://action-toys-server-taupe.vercel.app/toys/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

@@ -11,7 +11,7 @@ const Category = () => {
     }, []);
 
     const handleCategory = (category) => {
-        const url = `http://localhost:5000/toys/${category}`;
+        const url = `https://action-toys-server-taupe.vercel.app/toys/${category}`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => {
@@ -22,8 +22,8 @@ const Category = () => {
 
     return (
         <div className='my-14'>
-            <Tabs>
-                <TabList>
+            <Tabs className="">
+                <TabList className="mx-auto text-center border-b border-orange">
                     <Tab onClick={() => handleCategory('Avengers')}>Avengers</Tab>
                     <Tab onClick={() => handleCategory('DC Comics')}>DC Comics</Tab>
                     <Tab onClick={() => handleCategory('Transformers')}>Transformers</Tab>

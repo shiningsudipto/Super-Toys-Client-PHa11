@@ -16,7 +16,7 @@ const UpdateModal = ({ selectedId, setSelectedId }) => {
         console.log(selectedId);
 
         if (selectedId) {
-            fetch(`http://localhost:5000/toys/${selectedId}`, {
+            fetch(`https://action-toys-server-taupe.vercel.app/toys/${selectedId}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
