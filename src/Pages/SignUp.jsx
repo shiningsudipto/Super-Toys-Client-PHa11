@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import useTitle from '../Hook/useTitle';
@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const SignUp = () => {
     useTitle('SignUp')
+    const [error, setError] = useState('');
     const { createUser, settingDataToProfile } = useContext(AuthContext)
     const navigate = useNavigate()
     const handleSignUp = event => {
@@ -18,6 +19,7 @@ const SignUp = () => {
         console.log(name, photo, email, password);
         createUser(email, password)
             .then(result => {
+                setError('')
                 const user = result.user;
                 console.log(user);
                 settingDataToProfile(name, photo)
@@ -26,7 +28,7 @@ const SignUp = () => {
                         toast('User Created Successfully')
                     })
                     .catch((error) => {
-                        setRegError(error.message)
+                        setError(error.message)
                     });
                 form.reset();
                 navigate('/')
@@ -34,6 +36,7 @@ const SignUp = () => {
             .catch(error => {
                 const errorMessage = error.message;
                 console.log(errorMessage);
+                setError(errorMessage)
             })
 
     }
@@ -70,6 +73,7 @@ const SignUp = () => {
                         <input className='bg-orange w-full rounded-lg p-3 text-white font-semibold mt-3' type="submit" value="Sign Up" />
                     </form>
                     <p className='mt-4'>Have an account? <Link className='text-orange ' to="/signin">Please Sign In</Link></p>
+                    <p className='text-orange font-semibold my-4'>{error}</p>
                 </div>
             </div>
             <ToastContainer />

@@ -2,7 +2,6 @@ import React from 'react';
 import Swal from 'sweetalert2';
 
 const UpdateModal = ({ selectedId, setSelectedId }) => {
-    console.log(selectedId);
     const handleToyUpdate = (event, _id) => {
         event.preventDefault();
         const form = event.target;
@@ -35,6 +34,7 @@ const UpdateModal = ({ selectedId, setSelectedId }) => {
                         })
                         setSelectedId(null)
                     }
+                    form.reset();
                 })
         }
 
@@ -67,7 +67,7 @@ const UpdateModal = ({ selectedId, setSelectedId }) => {
                             </label>
                             <input type="text" required name='description' placeholder="Description" className="input input-bordered" />
                         </div>
-                        <input type="submit" value="Update" />
+                        <input className='btn bg-orange border-0 w-full my-4' type="submit" value="Update" />
                         {/* <button className='btn bg-orange w-full mt-6 border-0'>Update</button> */}
                     </form>
                 </label>

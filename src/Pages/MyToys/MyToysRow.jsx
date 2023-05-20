@@ -38,39 +38,6 @@ const MyToysRow = ({ myToy, number, myToys, setMyToys, setSelectedId }) => {
         })
     }
 
-    // const handleToyUpdate = (event) => {
-    //     event.preventDefault();
-    //     const form = event.target;
-    //     const price = form.price.value;
-    //     const availableQuantity = form.quantity.value;
-    //     const description = form.description.value;
-    //     const updatedToy = {
-    //         price, availableQuantity, description
-    //     }
-    //     console.log(updatedToy);
-
-    //     // fetch(`http://localhost:5000/toys/${_id}`, {
-    //     //     method: 'PUT',
-    //     //     headers: {
-    //     //         'content-type': 'application/json'
-    //     //     },
-    //     //     body: JSON.stringify(updatedToy)
-    //     // })
-    //     //     .then(res => res.json())
-    //     //     .then(data => {
-    //     //         console.log(data);
-    //     //         if (data.modifiedCount > 0) {
-    //     //             Swal.fire({
-    //     //                 title: 'success',
-    //     //                 text: 'Coffee added successfully!',
-    //     //                 icon: 'success',
-    //     //                 confirmButtonText: 'Cool'
-    //     //             })
-    //     //         }
-    //     //     })
-
-    // }
-
     return (
         <>
             {/* row */}
@@ -82,7 +49,7 @@ const MyToysRow = ({ myToy, number, myToys, setMyToys, setSelectedId }) => {
                 <td>{price}</td>
                 <td>{rating}</td>
                 <td>{availableQuantity}</td>
-                <td>{description.length > 25 ? description.slice(0, 20) : ''}...</td>
+                <td>{description.length > 25 ? description.slice(0, 20) : description}...</td>
                 <td>{myToy?.sellerName}</td>
                 <td>{sellerEmail}</td>
                 <td><label onClick={() => setSelectedId(_id)} htmlFor="my-modal-3" className="cursor-pointer bg-orange font-semibold p-2 rounded-lg text-white">Edit</label></td>

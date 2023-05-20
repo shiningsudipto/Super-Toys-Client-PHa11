@@ -1,12 +1,10 @@
 import React from 'react';
-import gif from '../assets/nf.gif'
 import webP from '../assets/404nf.webp'
 import { Link } from 'react-router-dom';
 
 const Notfound = () => {
     return (
         <div>
-            <h3>Link Not Found</h3>
             <div className='flex justify-center'>
                 <img className='h-96' src={webP} alt="" />
             </div>

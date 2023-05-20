@@ -22,7 +22,7 @@ const Category = () => {
 
     return (
         <div className='my-14'>
-            <Tabs className="">
+            <Tabs id='tabs' className="">
                 <TabList className="mx-auto text-center border-b border-orange">
                     <Tab onClick={() => handleCategory('Avengers')}>Avengers</Tab>
                     <Tab onClick={() => handleCategory('DC Comics')}>DC Comics</Tab>

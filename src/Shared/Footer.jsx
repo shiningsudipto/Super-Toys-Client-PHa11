@@ -17,11 +17,11 @@ const Footer = () => {
                     </div>
                     <div>
                         <span className="footer-title">Menu</span>
-                        <li><Link className='hover:text-orange' to="/">Home</Link></li>
-                        <li><Link className='hover:text-orange' to="/">All Toys</Link></li>
-                        <li><Link className='hover:text-orange' to="/">My Toys</Link></li>
-                        <li><Link className='hover:text-orange' to="/">Add A Toy</Link></li>
-                        <li><Link className='hover:text-orange' to="/">Blogs</Link></li>
+                        <p><Link className='hover:text-orange' to="/">Home</Link></p>
+                        <p><Link className='hover:text-orange' to="/allToys">All Toys</Link></p>
+                        <p><Link className='hover:text-orange' to="/myToys">My Toys</Link></p>
+                        <p><Link className='hover:text-orange' to="/addAToy">Add A Toy</Link></p>
+                        <p><Link className='hover:text-orange' to="/blog">Blogs</Link></p>
                     </div>
                     <div>
                         <span className="footer-title">Address</span>

@@ -20,7 +20,7 @@ const Gallery = () => {
             </div>
             <div className="grid lg:grid-cols-3 grid-cols-1">
                 {/* Image 1 */}
-                <div data-aos="fade-right" className="">
+                <div data-aos="zoom-in" className="">
                     <div className="relative group">
                         <img src={img1} alt="Image 1" className="w-full" />
                         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -44,7 +44,7 @@ const Gallery = () => {
                 </div>
 
                 {/* Image 3 */}
-                <div data-aos="fade-left" className="">
+                <div data-aos="zoom-in" className="">
                     <div className="relative group">
                         <img src={img3} alt="Image 3" className="w-full" />
                         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -55,7 +55,7 @@ const Gallery = () => {
                     </div>
                 </div>
                 {/* Image 4 */}
-                <div data-aos="fade-right" className="">
+                <div data-aos="zoom-in" className="">
                     <div className="relative group">
                         <img src={img4} alt="Image 3" className="w-full" />
                         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -77,7 +77,7 @@ const Gallery = () => {
                     </div>
                 </div>
                 {/* Image 6 */}
-                <div data-aos="fade-left" className="">
+                <div data-aos="zoom-in" className="">
                     <div className="relative group">
                         <img src={img6} alt="Image 3" className="w-full" />
                         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">

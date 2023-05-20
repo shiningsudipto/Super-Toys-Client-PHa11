@@ -47,6 +47,7 @@ const AddAToy = () => {
                 if (data.insertedId) {
                     toast('Your Toy Added')
                 }
+                form.reset();
             })
     }
     return (
