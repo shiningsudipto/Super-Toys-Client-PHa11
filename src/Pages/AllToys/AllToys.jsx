@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import DataROw from './DataROw';
 import useTitle from '../../Hook/useTitle';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const AllToys = () => {
-    useTitle('All Toys')
-    // const toys = useLoaderData();
-    // console.log(toys);
+    useTitle('All Toys');
+    const { loading } = useContext(AuthContext);
     const [toys, setToys] = useState([]);
     const [searchText, setSearchText] = useState('');
 
@@ -16,6 +16,11 @@ const AllToys = () => {
             .then(data => setToys(data)
             )
     }, [])
+    if (loading) {
+        return <div className='mx-auto w-1/3 my-6'>
+            <progress className="progress"></progress>
+        </div>
+    }
 
     const handleSearch = () => {
         fetch(`https://action-toys-server-taupe.vercel.app/toysName/${searchText}`)

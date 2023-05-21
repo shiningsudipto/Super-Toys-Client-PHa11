@@ -5,28 +5,43 @@ import UpdateModal from './UpdateModal';
 import useTitle from '../../Hook/useTitle';
 
 const MyToys = () => {
-    useTitle('My Toys')
+    useTitle('My Toys');
     const { user, loading } = useContext(AuthContext);
+
     if (loading) {
-        return <div className='mx-auto w-1/3 my-6'>
-            <progress className="progress"></progress>
-        </div>
+        return (
+            <div className='mx-auto w-1/3 my-6'>
+                <progress className="progress"></progress>
+            </div>
+        );
     }
+
     const [selectedId, setSelectedId] = useState(null);
-    const [myToys, setMyToys] = useState([])
-    console.log(selectedId);
+    const [myToys, setMyToys] = useState([]);
+    const [sortOrder, setSortOrder] = useState('desc'); // Track the current sort order
+
+    // console.log(selectedId);
+
     useEffect(() => {
-        fetch(`https://action-toys-server-taupe.vercel.app/toysBy?email=${user?.email}`)
+        fetch(`https://action-toys-server-taupe.vercel.app/toysBy?email=${user?.email}&sort=${sortOrder}`)
             .then(res => res.json())
-            .then(data => setMyToys(data))
-    }, [selectedId])
-    console.log(myToys);
+            .then(data => setMyToys(data));
+    }, [user?.email, sortOrder, selectedId]);
 
+    // console.log(myToys);
 
+    const handleSortByPrice = () => {
+        // Toggle the sort order between ascending and descending
+        const newSortOrder = sortOrder === 'desc' ? 'asc' : 'desc';
+        setSortOrder(newSortOrder);
+    };
 
     return (
         <div className='my-14'>
             <div className="overflow-x-auto">
+                <div className='flex justify-center mb-10'>
+                    <button className='btn bg-orange border-0' onClick={handleSortByPrice}>Sort by Price ({sortOrder === 'desc' ? 'Ascending' : 'Descending'})</button>
+                </div>
                 <table className="table w-full">
                     {/* head */}
                     <thead>
@@ -47,14 +62,16 @@ const MyToys = () => {
                     </thead>
                     <tbody>
                         {
-                            myToys.map((myToy, index) => <MyToysRow
-                                key={myToy._id}
-                                myToy={myToy}
-                                number={index}
-                                myToys={myToys}
-                                setMyToys={setMyToys}
-                                setSelectedId={setSelectedId}
-                            ></MyToysRow>)
+                            myToys.map((myToy, index) => (
+                                <MyToysRow
+                                    key={myToy._id}
+                                    myToy={myToy}
+                                    number={index}
+                                    myToys={myToys}
+                                    setMyToys={setMyToys}
+                                    setSelectedId={setSelectedId}
+                                ></MyToysRow>
+                            ))
                         }
                     </tbody>
                 </table>
@@ -62,9 +79,6 @@ const MyToys = () => {
             {
                 selectedId && (<UpdateModal setSelectedId={setSelectedId} selectedId={selectedId} ></UpdateModal>)
             }
-
-
-
         </div>
     );
 };

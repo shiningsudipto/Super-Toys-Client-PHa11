@@ -35,10 +35,18 @@ const Footer = () => {
                         <span className="footer-title">Social Links</span>
                         <div className='mb-4'>
                             <div className='flex space-x-4'>
-                                <FaFacebook className='text-3xl cursor-pointer hover:text-orange' />
-                                <FaInstagramSquare className='text-3xl cursor-pointer hover:text-orange' />
-                                <FaTwitter className='text-3xl cursor-pointer hover:text-orange' />
-                                <FaGithub className='text-3xl cursor-pointer hover:text-orange' />
+                                <a href="https://www.facebook.com/shiningsudipto">
+                                    <FaFacebook className='text-3xl cursor-pointer hover:text-orange' />
+                                </a>
+                                <a href="https://www.instagram.com/shiningsudipto/">
+                                    <FaInstagramSquare className='text-3xl cursor-pointer hover:text-orange' />
+                                </a>
+                                <a href="https://twitter.com/ShiningSudipto">
+                                    <FaTwitter className='text-3xl cursor-pointer hover:text-orange' />
+                                </a>
+                                <a href="https://github.com/shiningsudipto">
+                                    <FaGithub className='text-3xl cursor-pointer hover:text-orange' />
+                                </a>
                             </div>
                         </div>
                     </div>

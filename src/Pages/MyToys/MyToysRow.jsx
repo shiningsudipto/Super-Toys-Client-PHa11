@@ -43,7 +43,9 @@ const MyToysRow = ({ myToy, number, myToys, setMyToys, setSelectedId }) => {
             {/* row */}
             <tr>
                 <th>{number + 1}</th>
-                <img src={pictureUrl} className='w-32 rounded-xl' alt="Super Toys Image" />
+                <td>
+                    <img src={pictureUrl} className='w-32 rounded-xl' alt="Super Toys Image" />
+                </td>
                 <td>{name}</td>
                 <td>{category}</td>
                 <td>{price}</td>

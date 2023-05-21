@@ -16,8 +16,8 @@ const Gallery = () => {
     return (
         <div className='mb-14'>
             <div className='text-center my-6'>
-                <h2 className='lg:text-4xl font-bold text-center text-orange mt-12 mb-4'>Toys Gallery</h2>
-                <p className='lg:text-2xl font-semibold'>Best Selling Super Toys.</p>
+                <h2 className='text-4xl font-bold text-center text-orange mt-12 mb-4'>Toys Gallery</h2>
+                <p className='text-2xl font-semibold'>Best Selling Super Toys.</p>
             </div>
             <div className="grid lg:grid-cols-3 grid-cols-1">
                 {/* Image 1 */}

@@ -1,8 +1,10 @@
 import React from 'react';
 import webP from '../assets/404nf.webp'
 import { Link } from 'react-router-dom';
+import useTitle from '../Hook/useTitle';
 
 const Notfound = () => {
+    useTitle('Not Found')
     return (
         <div>
             <div className='flex justify-center'>
