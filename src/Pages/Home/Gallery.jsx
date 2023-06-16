@@ -19,7 +19,7 @@ const Gallery = () => {
                 <h2 className='text-4xl font-bold text-center text-orange mt-12 mb-4'>Toys Gallery</h2>
                 <p className='text-2xl font-semibold'>Best Selling Super Toys.</p>
             </div>
-            <div className="grid lg:grid-cols-3 grid-cols-1">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
                 {/* Image 1 */}
                 <div data-aos="zoom-in" className="">
                     <div className="relative group">

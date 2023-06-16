@@ -3,7 +3,7 @@ import { FaShippingFast, FaMoneyCheckAlt, FaHeadset, FaPercent } from "react-ico
 
 const Process = () => {
     return (
-        <div className='grid lg:grid-cols-4 my-14 grid-cols-1 space-y-6 lg:space-y-0'>
+        <div className='grid lg:grid-cols-4 md:grid-cols-2 my-14 grid-cols-1 space-y-6 lg:space-y-0'>
             <div className='flex justify-center items-center lg:w-auto w-60 mx-auto'>
                 <FaShippingFast className='mr-4 text-6xl text-orange' />
                 <div className=''>
