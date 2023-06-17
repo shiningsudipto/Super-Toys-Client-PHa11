@@ -6,6 +6,7 @@ import useTitle from '../../Hook/useTitle';
 import Discount from './Discount';
 import Process from './Process';
 import Newsletter from './Newsletter';
+import Partner from './Partner';
 
 const Home = () => {
     useTitle('Home')
@@ -17,6 +18,7 @@ const Home = () => {
             <Discount />
             <Newsletter />
             <Process />
+            <Partner />
         </div>
     );
 };

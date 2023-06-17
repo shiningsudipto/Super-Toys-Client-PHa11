@@ -9,7 +9,7 @@ const Discount = () => {
         AOS.init({ offset: 100, duration: 400, easing: 'ease-in-out', delay: 200 })
     }, [])
     return (
-        <div className='lg:my-14'>
+        <div id='offers' className='lg:my-14'>
             <div className='text-center '>
                 <h2 className='text-4xl text-orange font-bold mb-4'>Offers</h2>
                 <h4 className='text-2xl font-semibold mb-6'>Collect before ran out.</h4>

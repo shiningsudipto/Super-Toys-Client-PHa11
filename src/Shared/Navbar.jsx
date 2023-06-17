@@ -26,7 +26,13 @@ const Navbar = () => {
             </>
 
         }
-        <li><Link to="/blogs">Blogs</Link></li>
+        {/* <li><Link to="/blogs">Blogs</Link></li> */}
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#category">Category</a></li>
+        <li><a href="#offers">Offers</a></li>
+        <li><a href="#subscription">Subscription</a></li>
+        <li><a href="#process">Process</a></li>
+
     </>
     return (
         <div>

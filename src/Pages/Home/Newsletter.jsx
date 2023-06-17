@@ -3,7 +3,7 @@ import img1 from '../../assets/batmannn.jpg'
 
 const Newsletter = () => {
     return (
-        <div className='my-14'>
+        <div id='subscription' className='my-14'>
             <div className="hero" style={{ backgroundImage: `url(${img1})` }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content lg:text-start text-center">

@@ -2,7 +2,7 @@ import React from 'react';
 import bannerImg from '../../assets/banner2nd.jpg'
 const Banner = () => {
     return (
-        <div>
+        <div id='home'>
             <div className="hero lg:min-h-screen h-[420px]" style={{ backgroundImage: `url(${bannerImg})` }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-neutral-content">

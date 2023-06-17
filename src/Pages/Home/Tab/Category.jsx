@@ -21,7 +21,7 @@ const Category = () => {
     };
 
     return (
-        <div className='my-14'>
+        <div id='category' className='my-14'>
             <div className='text-center my-6'>
                 <h2 className='text-4xl font-bold text-center text-orange mt-12 mb-4'>Toys Category</h2>
                 <p className='text-2xl font-semibold'>Buy Your Favorite Toy.</p>

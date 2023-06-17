@@ -14,7 +14,7 @@ const Gallery = () => {
         AOS.init({ offset: 200, duration: 400, easing: 'ease-in-out', delay: 200 })
     }, [])
     return (
-        <div className='mb-14'>
+        <div id='gallery' className='mb-14'>
             <div className='text-center my-6'>
                 <h2 className='text-4xl font-bold text-center text-orange mt-12 mb-4'>Toys Gallery</h2>
                 <p className='text-2xl font-semibold'>Best Selling Super Toys.</p>
