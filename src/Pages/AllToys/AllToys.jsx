@@ -9,13 +9,13 @@ const AllToys = () => {
     const { loading } = useContext(AuthContext);
     const [toys, setToys] = useState([]);
     const [searchText, setSearchText] = useState('');
-
     useEffect(() => {
         fetch("https://action-toys-server-taupe.vercel.app/toys")
             .then(res => res.json())
             .then(data => setToys(data)
             )
     }, [])
+
     if (loading) {
         return <div className='mx-auto w-1/3 my-6'>
             <progress className="progress"></progress>

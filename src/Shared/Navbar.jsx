@@ -18,7 +18,6 @@ const Navbar = () => {
 
     const menuLinks = <>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/allToys">All Toys</Link></li>
         {
             user && <>
                 <li><Link to="/myToys">My Toys</Link></li>
@@ -30,8 +29,10 @@ const Navbar = () => {
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#category">Category</a></li>
         <li><a href="#offers">Offers</a></li>
-        <li><a href="#subscription">Subscription</a></li>
-        <li><a href="#process">Process</a></li>
+        <li><a href="#about">About</a></li>
+        <li><Link to="/allToys">All Toys</Link></li>
+        {/* <li><a href="#subscription">Subscription</a></li> */}
+        {/* <li><a href="#process">Process</a></li> */}
 
     </>
     return (
